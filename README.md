@@ -37,24 +37,19 @@ Sama uses different open source python libraries, such as:
 
 ### Installation
 
-Sama is currently works with Python 3.9 to 3.12.
-Install Python, copy all folders and files to any directory and make sure all packages are installed.
+Sama is currently works with Python 3.10 to 3.12.
+Install Conda or Miniconda, copy all folders and files to any directory and make sure all packages are installed.
 To install the packages, run the following commands:
 
 ```sh
-pip install -r requirements.txt
+conda install --file requirements.txt -c conda-forge
+pip install pickle-mixin==1.0.2
 ```
 
 or
 
 ```sh
-pip install matplotlib==3.6.2
-pip install numba==0.56.4
-pip install tqdm==4.64.1
-pip install pandas==1.5.2
-pip install scikit-learn==1.2.0
-pip install seaborn==0.12.1
-pip install pyyaml==0.2.5
+conda install -c conda-forge matplotlib=3.6.2 numba=0.56.4 tqdm=4.64.1 pandas=1.5.2 scikit-learn=1.2.0 seaborn=0.12.1 pyyaml=6.0 geopandas gdal rasterio
 pip install pickle-mixin==1.0.2
 ```
 
