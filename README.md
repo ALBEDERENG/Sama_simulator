@@ -34,6 +34,7 @@ Sama uses different open source python libraries, such as:
 * [pyyaml] - Full-featured YAML framework for the Python programming language
 * [gdal] - Translator library for raster and vector geospatial data formats 
 * [rasterio] - Rasterio reads and writes GeoTIFF and provides a Python API based on Numpy N-dimensional arrays and GeoJSON
+* [geopandas] - GeoPandas is an open source project to make working with geospatial data in python easier
 
 ### Installation
 
@@ -52,8 +53,6 @@ or
 conda install -c conda-forge matplotlib=3.6.2 numba=0.56.4 tqdm=4.64.1 pandas=1.5.2 scikit-learn=1.2.0 seaborn=0.12.1 pyyaml=6.0 geopandas gdal rasterio
 pip install pickle-mixin==1.0.2
 ```
-
-**To use the map import feature, it is necessary to install the [gdal] and [rasterio] libraries. To install gdal, we recommend using Anaconda or Miniconda instead of standard Python.**
 
 Setup the parameter file **param.yml** in the folder **parameters/**, linked [here]. Alter according to the simulations you choose to execute, but you must not change the name nor location of the file. 
 
@@ -90,10 +89,11 @@ Contact: christianfragoas@gmail.com
 [pickle-mixin]: <https://pypi.org/project/pickle-mixin/>
 [gdal]: <https://gdal.org/>
 [rasterio]: <https://github.com/rasterio/rasterio>
+[geopandas]: <geopandas.org>
 
 [here]: <https://github.com/cfragoas/CelDep_Optimizator/blob/main/parameters/param.yml>
-[1]: <http://dx.doi.org/10.14209/sbrt.2022.1570814168>
-[2]: <>
+[1]: <https://doi.org/10.1049/cmu2.70077>
+[2]: <http://dx.doi.org/10.14209/sbrt.2022.1570814168>
 
 
 [//]: # (# CelDep_Optimizator)
