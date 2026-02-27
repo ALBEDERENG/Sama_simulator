@@ -8,6 +8,7 @@ import socket
 from util.plot_data_new import plot_histograms, plot_curves, plot_surfaces
 from util.mann_whitney_u import compare_dist
 from clustering import Cluster
+import os
 
 # Just a set of auxiliary functions to setup a simulation environment
 
@@ -308,6 +309,7 @@ def start_simmulation(conf_file):
         iter = 0
         while end_sim is not True:
             # starting and finishing the process pool in each iteration to save memory for the other functions
+            os.environ["OMP_NUM_THREADS"] ="1"
             process_pool = prep_multiproc(threads=global_parameters['exec_param']['threads'])
             i += 1
             iter += batch_size

@@ -1,0 +1,87 @@
+#################################################   General Settings  ##################################################
+
+general:
+  file: 'C:\TMP\Arquivos PKL - SAMA\PF20BS - 100 W.pkl' # (path of the .pkl file) - BCQI20BS - 100 W (Atual)
+  make: 'graph' # 'map' --> draw map | 'graph' --> draw graph | 'grid' --> draw facet grit
+  bs_ue_min: 1 # Minimum number of BSs or UEs
+  bs_ue_max: 20 # Maximum number of BSs or UEs (If empty, only the minimum value will be used)
+  bs_ue_step: 1 # Step size for BSs or UEs
+  s_min: 1 # Minimum simulation number
+  s_max: 1000 # Maximum simulation number (If empty, only the minimum value will be used)
+  s_step: 1 # Step size for the simulation
+  type_link: 'downlink_data' #('downlink_data' or 'uplink_data')
+
+#################################################  End General Settings  ###############################################
+
+####################################################  Graph Settings  ##################################################
+
+graph:
+  x_var: 'distance' # 'distance','cap','snr','avg_latency'... (More parameters in the glossary) -->Used on density graph
+  y_var: 'cap' # 'distance','cap','snr','avg_latency' ... (More parameters in the glossary) -->Used on media graph
+  Throughput: 'True' # ('True' or 'False') → True and media = 'True' if y_var = cap be used for Throughput (Mbps) x Number of Bs
+  deficit_%: 'True' # ('True' or 'False') → True and media = 'True' if y_var = deficit be used for % of UE achive Throughtput x Number of Bs
+  UE/BS_ratio: 'False' # ('True' or 'False') → True for Throughput (Mbps) x UE/BS ratio or % of UE achive Throughtput x UE/BS ratio
+  title: 'Throughput Comparison'
+  xlabel: 'Distance UE/BS (Km)'
+  ylabel: 'Throughput (Mbps)'
+  figsize: [10, 6]
+  resolution: 300 # (100, 300 or 600)
+  grid: True
+  xlim: [1,5]
+  ylim: [20,22]
+  auto_scale: 'True'  # ('True' or 'False')
+  media: 'True' # ('True' or 'False') --> For x_var x Number of BS
+  regression_line: 'False' # ('True' or 'False')
+  graph_type: 'scatter' #('line','scatter' ,'bar', 'boxplot', 'scatter', 'histplot' or 'density') --> For media 'False'
+  save_as: 'Throughput X BS - PF20BS - 100 W'
+
+                            ############################  Glossary #################################
+                            #    'distance' → Distance between the UE and its respective BS (Km)   #
+                            #    'cap' → Capacity (Mbps)                                           #
+                            #    'snr' → Signal-to-noise ratio (dB)                                #
+                            #    'avg_latency' → Average latency (ms)                              #
+                            #    'user_time' → Time each UE was connected to its BS (ms)           #
+                            #    'user_bw' → Bandwidth used by each UE (ms)                        #
+                            #    'deficit' → Capacity required to achieve target capacity (Mbps)   #
+                            #    'norm_deficit' → Capacity deficit averages (Mbps)                 #
+                            #    'start_latency' →  First message exchange between UE and BS (ms)  #
+                            #    'min_latency' → Minimum latency (ms)                              #
+                            #    'max_latency' → Maximum latency (ms)                              #
+                            ########################################################################
+
+##################################################   End Graph Settings  ###############################################
+
+#####################################################  Map Settings  ###################################################
+
+map:
+  complete: True # True --> * / False --> **
+  title: 'Map of BSs and UEs'
+  xlabel: 'Distance (Km)'
+  ylabel: 'Distance (Km)'
+  figsize: [10, 6]
+  resolution: 300 # (100, 300 or 600)
+  grid: False
+  xlim: [0,30]
+  ylim: [0,30]
+  auto_scale: 'False'  # ('True' or 'False')
+  save_as: 'graph_teste.png'
+
+# *  Draws the maps for all BSs and simulations based on the provided maximum and minimum values
+# ** Draws the maps for a single quantity of BSs or UEs (bs_ue_min) from a specific simulation (s_min)
+
+#################################################   End Map Settings  ##################################################
+
+################################################  Facet Grid Settings  #################################################
+grid:
+  folders_matrix:
+                  - ["2025-05-27_13-51-30", "2025-05-27_13-52-14", "2025-05-27_13-52-30"]
+                  - ["2025-05-27_13-52-43", "2025-05-27_13-52-54", "2025-05-27_13-53-04"]
+                  - ["2025-05-27_13-53-14", "2025-05-27_13-53-25", "2025-05-27_13-53-36"]
+
+
+  x_labels: [ "5 BSs", "10 BSs", '15 Bss']
+  y_labels: [ "Round-Robin", "Best CQI", "Proportional-fair"]
+
+#############################################  End Facet Grid Settings  ################################################
+
+
