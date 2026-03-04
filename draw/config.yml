@@ -10,6 +10,7 @@ general:
   s_max: 1000 # Maximum simulation number (If empty, only the minimum value will be used)
   s_step: 1 # Step size for the simulation
   type_link: 'downlink_data' #('downlink_data' or 'uplink_data')
+  auto_save: 'True' # ('True' or 'False')
 
 #################################################  End General Settings  ###############################################
 
