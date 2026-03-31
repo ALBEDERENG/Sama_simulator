@@ -1,7 +1,7 @@
 #################################################   General Settings  ##################################################
 
 general:
-  file: 'C:\TMP\Arquivos PKL - SAMA\PF20BS - 100 W.pkl' # (path of the .pkl file) - BCQI20BS - 100 W (Atual)
+  file: 'C:\TMP\Arquivos PKL - SAMA\MAPAS_2KM2\jardim_botanico_winner_2km2.pkl' # (path of the .pkl file) - BCQI20BS - 100 W (Atual)
   make: 'graph' # 'map' --> draw map | 'graph' --> draw graph | 'grid' --> draw facet grit
   bs_ue_min: 1 # Minimum number of BSs or UEs
   bs_ue_max: 20 # Maximum number of BSs or UEs (If empty, only the minimum value will be used)
@@ -11,6 +11,7 @@ general:
   s_step: 1 # Step size for the simulation
   type_link: 'downlink_data' #('downlink_data' or 'uplink_data')
   auto_save: 'True' # ('True' or 'False')
+  map: 'C:\TMP\MAPAS NPY\MAPAS_2KM2\mapa_jardim_botanico_2km2.npy'
 
 #################################################  End General Settings  ###############################################
 
@@ -18,13 +19,13 @@ general:
 
 graph:
   x_var: 'distance' # 'distance','cap','snr','avg_latency'... (More parameters in the glossary) -->Used on density graph
-  y_var: 'cap' # 'distance','cap','snr','avg_latency' ... (More parameters in the glossary) -->Used on media graph
-  Throughput: 'True' # ('True' or 'False') → True and media = 'True' if y_var = cap be used for Throughput (Mbps) x Number of Bs
+  y_var: 'deficit' # 'distance','cap','snr','avg_latency' ... (More parameters in the glossary) -->Used on media graph
+  Throughput: 'False' # ('True' or 'False') → True and media = 'True' if y_var = cap be used for Throughput (Mbps) x Number of Bs
   deficit_%: 'True' # ('True' or 'False') → True and media = 'True' if y_var = deficit be used for % of UE achive Throughtput x Number of Bs
   UE/BS_ratio: 'False' # ('True' or 'False') → True for Throughput (Mbps) x UE/BS ratio or % of UE achive Throughtput x UE/BS ratio
-  title: 'Throughput Comparison'
+  title: 'Deficit Comparison'
   xlabel: 'Distance UE/BS (Km)'
-  ylabel: 'Throughput (Mbps)'
+  ylabel: '%UE'
   figsize: [10, 6]
   resolution: 300 # (100, 300 or 600)
   grid: True
@@ -33,8 +34,8 @@ graph:
   auto_scale: 'True'  # ('True' or 'False')
   media: 'True' # ('True' or 'False') --> For x_var x Number of BS
   regression_line: 'False' # ('True' or 'False')
-  graph_type: 'scatter' #('line','scatter' ,'bar', 'boxplot', 'scatter', 'histplot' or 'density') --> For media 'False'
-  save_as: 'Throughput X BS - PF20BS - 100 W'
+  graph_type: 'line' #('line','scatter' ,'bar', 'boxplot', 'scatter', 'histplot' or 'density') --> For media 'False'
+  save_as: '%UE X BS - jardim_botanico_winner_2km2'
 
                             ############################  Glossary #################################
                             #    'distance' → Distance between the UE and its respective BS (Km)   #

@@ -200,7 +200,7 @@ match config['general']['make']:
                         linestyle='--'
                     )
 
-                    plt.xlabel("Number of BSs", size=14)
+                    plt.xlabel("Number of BS", size=14)
 
                 # ==================================================
                 # GRÁFICO %UEs x UE/BS
@@ -219,7 +219,7 @@ match config['general']['make']:
                     plt.xticks(sorted(percent_df['bs'].unique()))
                     plt.xlabel("UE/BS Ratio", size=14)
 
-                plt.ylabel("%UEs that reach target throughput", size=14)
+                plt.ylabel(config['graph']['ylabel'], size=14)
                 plt.title("%UEs that Reach the Target Throughput", size=16)
                 plt.ylim(0, 100)
                 plt.grid(True)

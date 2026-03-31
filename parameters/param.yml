@@ -16,7 +16,7 @@ roi_param:
   # ============================ if grid and map == True, the applications will use grid ===============================
   # ==================================================== grid param ====================================================
 
-  grid: True
+  grid: False
   grid_lines: 1000
   grid_columns: 1000
   cel_size: 30
@@ -32,8 +32,8 @@ roi_param:
   # ==================================================================================================================
 
   # ==================================================== raster param ================================================
-  raster: False
-  input_shapefile: 'rasters/shapefiles/bairros_tcc/botafogo.shp' # Path containing the input shapefile (string type)
+  raster: True
+  input_shapefile: 'C:\TMP\MAPAS_ATUALIZADO\BAIRROS_ATUALIZADOS/botafogo.shp' # Path containing the input shapefile (string type)
   output_raster: 'rasters/botafogo.tif' # Path for the output rasterfile to be placed (string type)
   projection: 'EPSG:4326' # Projection to be used (string type) / 'EPSG:4326' is a commom one
   burner_value: 'osm_id' # Name of the column used to generate the raster file (string type)
